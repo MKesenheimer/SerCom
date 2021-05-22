@@ -29,3 +29,9 @@ optional arguments:
                         Line ending to use: none [N], carriage return [r], new line [n], both [rn]
   --hex                 Print the output as hex values
 ```
+
+## Example
+```
+sercom /dev/tty.wchusbserial1420 --baudrate 19200
+```
+
