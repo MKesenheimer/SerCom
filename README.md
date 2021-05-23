@@ -8,6 +8,8 @@
 # SerCom
 Standalone program to interface serial communications with Arduinos and other peripherals.
 
+![Screenshot](https://raw.githubusercontent.com/MKesenheimer/SerCom/main/Screenshot.png)
+
 ## Usage
 This program can be used similar to the serial monitor of the Arduino IDE.
 
