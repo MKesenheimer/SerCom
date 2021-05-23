@@ -1,14 +1,7 @@
-```
- ___  ____  ____   ___  _____  __  __ 
-/ __)( ___)(  _ \ / __)(  _  )(  \/  )
-\__ \ )__)  )   /( (__  )(_)(  )    ( 
-(___/(____)(_)\_) \___)(_____)(_/\/\_)
-```
+![Screenshot](https://raw.githubusercontent.com/MKesenheimer/SerCom/main/Screenshot.png)
 
 # SerCom
 Standalone program to interface serial communications with Arduinos and other peripherals.
-
-![Screenshot](https://raw.githubusercontent.com/MKesenheimer/SerCom/main/Screenshot.png)
 
 ## Usage
 This program can be used similar to the serial monitor of the Arduino IDE.
