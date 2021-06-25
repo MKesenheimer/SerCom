@@ -3,6 +3,11 @@
 # SerCom
 Standalone program to interface serial communications with Arduinos and other peripherals.
 
+## Prerequisites
+```
+python -m pip install -r requirements.txt
+```
+
 ## Usage
 This program can be used similar to the serial monitor of the Arduino IDE.
 
