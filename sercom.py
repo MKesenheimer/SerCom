@@ -150,26 +150,30 @@ if __name__ == "__main__":
   else:
     lineending = "\r\n"
 
-  ser = serial.Serial(port=args.port[0], baudrate=args.baudrate[0], timeout=args.timeout[0])
+  try:
+    ser = serial.Serial(port=args.port[0], baudrate=args.baudrate[0], timeout=args.timeout[0])
 
-  x = listening(ser, args.encoding[0], args.outputhex)
-  y = sending(ser, args.encoding[0], lineending, args.inputhex)
-  x.start()
-  time.sleep(args.timeout[0])
-  y.start()
+    x = listening(ser, args.encoding[0], args.outputhex)
+    y = sending(ser, args.encoding[0], lineending, args.inputhex)
+    x.start()
+    time.sleep(args.timeout[0])
+    y.start()
   
-  if args.oneshot[0] == None:
-    try:
-      while True:
-        time.sleep(args.timeout[0])
-    except (KeyboardInterrupt, SystemExit):
+    if args.oneshot[0] == None:
+      try:
+        while True:
+          time.sleep(args.timeout[0])
+      except (KeyboardInterrupt, SystemExit):
+        x.join(args.timeout[0])
+        y.join(args.timeout[0])
+        print("\nGood bye.")
+        exit(0)
+    else:
+      time.sleep(args.oneshot[0])
       x.join(args.timeout[0])
       y.join(args.timeout[0])
-      print("\nGood bye.")
+      print("\nDone.")
       exit(0)
-  else:
-    time.sleep(args.oneshot[0])
-    x.join(args.timeout[0])
-    y.join(args.timeout[0])
-    print("\nDone.")
-    exit(0)
+  
+  except:
+    print("Error: USB Port does not exist. Did you choose the correct tty?")
